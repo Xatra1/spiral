@@ -1,13 +1,16 @@
 const ctx = document.getElementById("canvas").getContext("2d"),
-  canvas = ctx.canvas;
+  canvas = ctx.canvas,
+  keySequence = [];
 //const incrementString = document.getElementById('increment');
 
 let increment = 0,
+  add = 1,
   centerX,
   centerY,
   width,
   height,
-  add = 1;
+  color = "0, 255, 0",
+  secret;
 
 setInterval(() => {
   if (add) {
@@ -28,7 +31,11 @@ function spiral() {
   height = canvas.height;
   centerX = width / 2;
   centerY = height / 2;
-  draw(`rgba(0, 255, 0, 0.7)`, 5);
+  ctx.fillStyle = "rgba(0, 0, 0, 1)";
+  ctx.fillRect(0, 0, width, height);
+
+  draw(`rgba(${color}, 0.7)`, 5);
+  if (secret == "purple") draw("rgba(255, 255, 255, 0.7)", 5);
 
   setTimeout(() => {
     requestAnimationFrame(spiral);
@@ -38,9 +45,6 @@ function spiral() {
 function draw(color, num) {
   ctx.moveTo(centerX, centerY);
   ctx.beginPath();
-
-  ctx.fillStyle = "rgba(0, 0, 0, 1)";
-  ctx.fillRect(0, 0, width, height);
 
   for (i = 0; i < innerHeight; i++) {
     angle = increment * i;
@@ -52,4 +56,20 @@ function draw(color, num) {
   ctx.strokeStyle = color;
   ctx.stroke();
 }
+
+document.addEventListener("keypress", (e) => {
+  keySequence.push(e.key);
+  const keyString = keySequence.join("");
+
+  if (keyString.match(/purple/i) == "purple") {
+    color = "255, 0, 255";
+    secret = "purple";
+  }
+
+  switch (e.key) {
+    case "1":
+      color = "255, 0, 0";
+  }
+});
+
 spiral();
