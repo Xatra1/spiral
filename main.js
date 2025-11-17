@@ -31,6 +31,7 @@ function spiral() {
 
   draw(`rgba(${color}, 0.7)`, 5);
   if (secret == "white") draw("rgba(255, 255, 255, 0.7)", 5);
+  if (secret == "twin") draw(`rgba(${color}, 0.7`, -5);
 
   setTimeout(() => {
     requestAnimationFrame(spiral);
