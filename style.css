@@ -11,12 +11,6 @@ canvas {
     z-index: -1;
 }
 
-/*#increment {
-    position: absolute;
-    top: -1%;
-    z-index: 1;
-}*/
-
 @keyframes fade {
   from { opacity: 100%; }
   to { opacity: 0%; }

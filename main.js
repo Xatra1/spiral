@@ -1,6 +1,5 @@
 const ctx = document.getElementById("canvas").getContext("2d"),
   canvas = ctx.canvas;
-//const incrementString = document.getElementById('increment');
 
 let increment = 0,
   add = 1,
@@ -15,7 +14,6 @@ setInterval(() => {
   } else {
     increment >= -9.43 ? increment -= .00025 : add = 1;
   }
-  //incrementString.textContent = `Increment: ${increment}`
 }, 1);
 
 function spiral() {
