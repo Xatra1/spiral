@@ -31,7 +31,7 @@ function spiral() {
   if (secret == "invert") ctx.fillStyle = "rgba(200, 200, 200, 1)";
   ctx.fillRect(0, 0, width, height);
 
-  draw(`rgba(${color}, 0.7`, 5);
+  if (secret != "invert") draw(`rgba(${color}, 0.7`, 5);
   if (secret == "white") draw("rgba(255, 255, 255, 0.7)", 5);
   if (secret == "twin") draw(`rgba(${color}, 0.7`, -5);
   if (secret == "invert") draw(`rgba(0, 0, 0, 0.7)`, 5);
