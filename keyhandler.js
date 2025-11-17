@@ -13,6 +13,9 @@ document.addEventListener("keypress", (e) => {
   if (keyString.match(/white/i) == "white") {
     secret = "white";
     keySequence = [];
+  } else if (keyString.match(/invert/i) == "invert") {
+    secret = "invert";
+    keySequence = [];
   }
 
   switch (e.key) {
@@ -51,13 +54,19 @@ document.addEventListener("keypress", (e) => {
     case "9":
       secret = "twin";
       break;
+
+    case "0":
+      secret = "";
+      previousSecret = "";
+      break;
   }
 
   if (secret != previousSecret) {
     previousSecret = secret;
     if (!isStringShown) {
       isStringShown = 1;
-      secretString.textContent = `You found the secret "${secret}!"`;
+      secretString.textContent =
+        `You found the secret "${secret}"! Use the 0 key to turn it off.`;
       secretString.style.display = "block";
       secretString.style.animation = "1.5s ease-out fade 3s forwards";
       setTimeout(() => {
