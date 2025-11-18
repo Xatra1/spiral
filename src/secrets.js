@@ -1,6 +1,7 @@
 const secretString = document.getElementById("secretString");
 
-let previousSecret,
+let secret,
+  previousSecret,
   isStringShown = 0;
 
 setInterval(() => {
