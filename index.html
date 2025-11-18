@@ -3,22 +3,26 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>Spiral</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <title>Spiral</title>
 </head>
 
 <body>
-    <div id="noteContainer" class="container">
-        <p id="keynote" class="popupString">You can use number keys 1-8 to change the color of the spiral.<br>Try to find the secret keybinds!</p>
-    </div>
+  <div id="noteContainer" class="container">
+    <p id="keynote" class="popupString">You can use number keys 1-8 to change the color of the spiral.<br>Try to find the secret keybinds!</p>
+  </div>
 
-    <div id="secretStringContainer" class="container">
-        <p id="secretString" class="popupString">Placeholder</p>
-    </div>
+  <div id="secretStringContainer" class="container">
+    <p id="secretString" class="popupString">Placeholder</p>
+  </div>
+    
+  <div id="fsContainer">
+    <button id="fsButton">Fullscreen</button>
+  </div>
 
-    <canvas id="canvas">Your browser doesn't support canvas.</canvas>
+  <canvas id="canvas">Your browser doesn't support canvas.</canvas>
 </body>
 
 <script src="keyhandler.js"></script>
