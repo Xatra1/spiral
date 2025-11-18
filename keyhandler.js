@@ -1,11 +1,8 @@
-const secretString = document.getElementById("secretString"),
-  fsButton = document.getElementById("fsButton");
+const fsButton = document.getElementById("fsButton");
 
 let color = "0, 255, 0",
   secret,
   keySequence = [],
-  previousSecret,
-  isStringShown = 0,
   fullscreen = 0;
 
 document.addEventListener("keypress", (e) => {
@@ -62,22 +59,6 @@ document.addEventListener("keypress", (e) => {
       previousSecret = "";
       break;
   }
-
-  if (secret != previousSecret) {
-    previousSecret = secret;
-    if (!isStringShown) {
-      isStringShown = 1;
-      secretString.textContent =
-        `You found the secret "${secret}"! Use the 0 key to turn it off.`;
-      secretString.style.display = "block";
-      secretString.style.animation = "1.5s ease-out fade 3s forwards";
-      setTimeout(() => {
-        secretString.style.display = "none";
-        secretString.style.animation = "none";
-        isStringShown = 0;
-      }, 4300);
-    }
-  }
 });
 
 fsButton.addEventListener("click", () => {
@@ -89,13 +70,3 @@ fsButton.addEventListener("click", () => {
     fullscreen = 0;
   }
 });
-
-setInterval(() => {
-  if (secret == "invert") {
-    fsButton.style.setProperty("color", "black", "important");
-    fsButton.style.border = "1px solid black";
-  } else {
-    fsButton.style.color = "";
-    fsButton.style.border = "1px solid white";
-  }
-}, 1000 / 60);
