@@ -1,7 +1,6 @@
 const fsButton = document.getElementById("fsButton");
 
 let color = "0, 255, 0",
-  secret,
   keySequence = [],
   fullscreen = 0;
 
