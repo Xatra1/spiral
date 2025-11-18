@@ -30,3 +30,17 @@ canvas {
 #secretString {
   display: none;
 }
+
+#fsButton {
+  bottom: 1%;
+  right: 0.5%;
+  background-color: transparent;
+  border: 1px solid white;
+  position: fixed;
+  opacity: 75%;
+}
+
+#fsButton:active {
+  color: rgb(128, 128, 128);
+  border: 1px solid rgb(128, 128, 128);
+}

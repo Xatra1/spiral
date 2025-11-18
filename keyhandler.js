@@ -1,10 +1,12 @@
-const secretString = document.getElementById("secretString");
+const secretString = document.getElementById("secretString"),
+  fsButton = document.getElementById("fsButton");
 
 let color = "0, 255, 0",
   secret,
   keySequence = [],
   previousSecret,
-  isStringShown = 0;
+  isStringShown = 0,
+  fullscreen = 0;
 
 document.addEventListener("keypress", (e) => {
   keySequence.push(e.key);
@@ -75,5 +77,15 @@ document.addEventListener("keypress", (e) => {
         isStringShown = 0;
       }, 4300);
     }
+  }
+});
+
+fsButton.addEventListener("click", () => {
+  if (!fullscreen) {
+    document.body.requestFullscreen();
+    fullscreen = 1;
+  } else {
+    document.exitFullscreen();
+    fullscreen = 0;
   }
 });
