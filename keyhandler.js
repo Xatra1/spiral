@@ -89,3 +89,13 @@ fsButton.addEventListener("click", () => {
     fullscreen = 0;
   }
 });
+
+setInterval(() => {
+  if (secret == "invert") {
+    fsButton.style.setProperty("color", "black", "important");
+    fsButton.style.border = "1px solid black";
+  } else {
+    fsButton.style.color = "";
+    fsButton.style.border = "1px solid white";
+  }
+}, 1000 / 60);
